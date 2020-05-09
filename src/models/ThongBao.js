@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const thongBaoSchema = mongoose.Schema({
-    noidung: {
+    title: {
+        type: String,
+        required: true
+    },content: {
         type: String,
         required: true
     },
-    nguoidang:{
+    author:{
         type: String
     }
 });

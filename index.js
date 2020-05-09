@@ -1,20 +1,21 @@
 require('./src/models/User');
 require('./src/models/ThongTinCaNhan');
 require('./src/models/ThongBao');
+require('./src/models/Sinhvien');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes=require('./src/routes/authRoutes'); 
-const updateRoutes=require('./src/routes/updateRoutes');   
-const notifyRoutes=require('./src/routes/notifyRoutes');  
+const statisticRoutes=require('./src/routes/statisticRoutes');   
+const manageRoutes=require('./src/routes/manageRoutes');  
 const requireAuth=require('./src/middlewares/requireAuth');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
-app.use(updateRoutes);
-app.use(notifyRoutes);
+app.use(statisticRoutes);
+app.use(manageRoutes);
 
 const mongoUri = 'mongodb+srv://admin:2110@cluster0-30ryd.mongodb.net/test?retryWrites=true&w=majority'
 
