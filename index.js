@@ -1,5 +1,4 @@
 require('./src/models/User');
-require('./src/models/ThongTinCaNhan');
 require('./src/models/ThongBao');
 require('./src/models/Sinhvien');
 const express = require('express');

@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 const sinhVienSchema = mongoose.Schema({
-    MSSV: {
+    mssv: {
         type: String,
         unique: true,
         required: true
     },
-    HoVaTen: {
+    hovaten: {
         type: String,
         required: true
     },
-    MaLop: {
+    malop: {
         type: String,
         required: true
     },
-    TinhTrangHoc: {
+    tinhtranghoc: {
         type: String,
         required: true
     },
@@ -22,7 +22,7 @@ const sinhVienSchema = mongoose.Schema({
         type: String,
     },
     ngaysinh:{
-        type: Date,
+        type: String,
     },
     dantoc:{
         type: String,
