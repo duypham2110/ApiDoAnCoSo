@@ -10,6 +10,7 @@ const manageRoutes=require('./src/routes/manageRoutes');
 const requireAuth=require('./src/middlewares/requireAuth');
 
 const app = express();
+const PORT = process.env.PORT || 5000
 
 app.use(bodyParser.json());
 app.use(authRoutes);
@@ -34,6 +35,4 @@ app.get('/', requireAuth, (req, res) => {
     res.send(`Your email: ${req.user.email}`);
 });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
-})
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
