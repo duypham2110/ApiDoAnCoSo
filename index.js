@@ -9,6 +9,8 @@ const statisticRoutes=require('./src/routes/statisticRoutes');
 const manageRoutes=require('./src/routes/manageRoutes');  
 const requireAuth=require('./src/middlewares/requireAuth');
 
+const path = require('path')
+
 const app = express();
 const PORT = process.env.PORT || 5000
 
@@ -35,4 +37,8 @@ app.get('/', requireAuth, (req, res) => {
     res.send(`Your email: ${req.user.email}`);
 });
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.use(express.static(path.join(__dirname, 'public')))
+.set('views', path.join(__dirname, 'views'))
+.set('view engine', 'ejs')
+.get('/', (req, res) => res.render('index'))
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
